@@ -190,7 +190,13 @@ const privateCall = ({
       .createHmac('sha256', apiSecret)
       .update(makeQueryString({ ...data, timestamp }).substr(1))
       .digest('hex')
-
+    const aa = crypto
+      .createHmac('sha256', apiSecret);
+    const bb = aa.update(makeQueryString({ ...data, timestamp }).substr(1))
+    const cc = bb.digest('hex');
+    console.log(aa);
+    console.log(bb);
+    console.log(cc);
     const newData = noExtra ? data : { ...data, timestamp, signature }
 
     return sendResult(
