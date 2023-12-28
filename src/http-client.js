@@ -414,6 +414,11 @@ export default opts => {
     dustTransfer: payload => privCall('/sapi/v1/asset/dust', payload, 'POST'),
     accountCoins: payload => privCall('/sapi/v1/capital/config/getall', payload),
 
+    getUsdt: (payload = { asset:"USDT"}) => privCall('/sapi/v3/asset/getUserAsset', payload, 'POST'),
+    requestConvert: payload => privCall('/sapi/v1/convert/getQuote', payload, 'POST'),
+    acceptConvert: payload => privCall('/sapi/v1/convert/acceptQuote', payload, 'POST'),
+    statusConvert: payload => privCall('/sapi/v1/convert/orderStatus', payload),
+
     getBnbBurn: payload => privCall('/sapi/v1/bnbBurn', payload),
     setBnbBurn: payload => privCall('/sapi/v1/bnbBurn', payload, 'POST'),
 
