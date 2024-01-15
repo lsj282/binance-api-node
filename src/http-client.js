@@ -411,6 +411,7 @@ export default opts => {
     requestConvert: payload => privCall('/sapi/v1/convert/getQuote', payload, 'POST'),
     acceptConvert: payload => privCall('/sapi/v1/convert/acceptQuote', payload, 'POST'),
     statusConvert: payload => privCall('/sapi/v1/convert/orderStatus', payload),
+    historyConvert: payload => privCall('/sapi/v1/convert/tradeFlow', payload),
 
     getBnbBurn: payload => privCall('/sapi/v1/bnbBurn', payload),
     setBnbBurn: payload => privCall('/sapi/v1/bnbBurn', payload, 'POST'),
